@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>MY-BOOK</title>
+</head>
+<body>
+<h1>MY-BOOK</h1>
+{{#isAnonymous}}
+  <form>
+    <label for="username">아이디 :</label>
+    <input type="text" name="username"/>
+    <label for="password">비밀번호 :</label>
+    <input type="password" name="password"/>
+  </form>
+
+  <input id="login-btn" type="button" value="로그인 하기">
+  <input id="join-btn" type="button" value="회원가입 하기">
+
+{{/isAnonymous}}
+{{^isAnonymous}}
+  <h2>{{memberId}} 님 환영합니다!</h2>
+  <input type='hidden' name='memberId' value={{memberId}}>
+  <label for="bookName">책 제목 : </label>
+  <input type="text" name="bookName"/>
+  <input id="search-btn" type="button" value="검색 하기"><br><br><br>
+  <strong id="search-hist-btn" style="color:dimgrey">검색 이력 보기</strong>
+  <ul class="search-hist-list" style="display:none"></ul>
+  <strong id="popular-keyword-btn" style="color: purple">인기 키워드 보기</strong>
+  <ul class="popular-keyword-list" style="display:none"></ul>
+{{/isAnonymous}}
+<hr>
+
+<ul class="book-list"></ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/mybook.main.js"></script>
+</body>
+</html>

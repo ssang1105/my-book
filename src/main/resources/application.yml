@@ -1,0 +1,32 @@
+server:
+  port: 4020
+
+
+spring:
+  application.name: my-book
+  datasource:
+    driver-class-name: org.h2.Driver  #h2 드라이버 설정
+
+kakao:
+  book-client:
+    app-key: 84e0134bf839cd0ced8df85a24a96aa5
+    scheme: https
+    host: dapi.kakao.com
+    connect-timeout: 5000
+    socket-timeout: 5000
+naver:
+  book-client:
+    client-id: yuWNMmkUgoqk_4WezwKm
+    client-secret: JpK1jKzc14
+    scheme: https
+    host: openapi.naver.com
+    connect-timeout: 5000
+    socket-timeout: 5000
+
+
+## Logging
+logging:
+  level:
+    root: info
+    jdbc: off
+
